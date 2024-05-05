@@ -1,72 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&amp;display=swap');
-
+/* Import Google font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 * {
-    padding: 0;
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
-
 body {
-    background-image: linear-gradient(45deg, #3e618f, #29a594);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #E3F2FD;
+}
+.wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  background: #293447;
+  box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
+}
+.game-details {
+  color: #B8C6DC;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+.play-board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: #212837;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+.play-board .food {
+  background: #FF003D;
+}
+.play-board .head {
+  background: #60CBFF;
 }
 
-.body {
-    min-height: 100vh;
-    background-size: 100vw 100vh;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.controls {
+  display: none;
+  justify-content: space-between;
+}
+.controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #B8C6DC;
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-right: 1px solid #171B26;
 }
 
-#scoreBox {
-    position: absolute;
-    top: 9px;
-    right: 200px;
-    font-size: 39px;
-    font-weight: bold;
-    font-family: 'New Tegomin', serif;
-    padding: 9px;
-    color: red;
-    background-color: black;
-}
-
-#hiscoreBox {
-    position: absolute;
-    top: 93px;
-    right: 156px;
-    font-size: 39px;
-    font-weight: bold;
-    font-family: 'New Tegomin', serif;
-    padding: 9px;
-    color: red;
-    background-color: black;
-}
-
-#board {
-    background-image: linear-gradient(45deg, #3e618f, #29a594);
+@media screen and (max-width: 800px) {
+  .wrapper {
     width: 90vmin;
-    height: 92vmin;
-    border: 2px solid black;
-    display: grid;
-    grid-template-rows: repeat(18, 1fr);
-    grid-template-columns: repeat(18, 1fr);
-}
-
-.head {
-    background: red;
-    border: 2px solid rgb(34, 4, 34);
-    transform: scale(1.02);
-    border-radius: 50%;
-}
-
-.snake {
-    background-color: purple;
-    border: .25vmin solid white;
-    border-radius: 12px;
-}
-
-.food {
-    background: yellow;
-    border: .25vmin solid black;
-    border-radius: 8px;
+    height: 115vmin;
+  }
+  .game-details {
+    font-size: 1rem;
+    padding: 15px 27px;
+  }
+  .controls {
+    display: flex;
+  }
+  .controls i {
+    padding: 15px 0;
+    font-size: 1rem;
+  }
 }
