@@ -8,7 +8,7 @@ let foodX, foodY;
 let snakeX = 5, snakeY = 5;
 let velocityX = 0, velocityY = 0;
 let snakeBody = [];
-let setIntervalId = setInterval(initGame, 150);
+let setIntervalId;
 let score = 0;
 
 // Getting high score from the local storage
